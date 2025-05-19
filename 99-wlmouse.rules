@@ -1,0 +1,8 @@
+# Udev rules for WLmouse Ying63 keyboard (replace with your actual values)
+# Find your Vendor ID and Product ID via lsusb
+
+# USB device rule
+SUBSYSTEM=="usb", ATTR{idVendor}=="36a7", ATTR{idProduct}=="f888", MODE="0666", TAG+="uaccess"
+
+# HID raw device rule
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="f888", MODE="0666", TAG+="uaccess"
